@@ -1,14 +1,18 @@
 <template>
 <div>
   <h1>Directory!</h1>
-  <ul class="directory">
-    <li class="codeItem" v-for="code in codes">{{code.repoUri}}</li>
-  </ul>
+  <div class="directory">
+    <code-item :code="code" class="codeItem" v-for="code in codes">{{code.repoUri}}</code-item>
+  </div>
 </div>
 </template>
 
 <script>
+  import CodeItem from './CodeItem'
   export default {
-    props: ['codes']
+    props: ['codes'],
+    components: {
+      CodeItem
+    }
   }
 </script>
